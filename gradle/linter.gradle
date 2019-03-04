@@ -1,0 +1,16 @@
+gradleLint {
+    rules = [
+            'all-nebula-renames',
+            'archaic-wrapper',
+            'dependency-parentheses',
+            'duplicate-dependency-class',
+            'unused-dependency',
+            'unused-exclude-by-conf',
+            'unused-exclude-by-dep'
+    ]
+
+    excludedRules = []
+
+    // This will fail the build in the event of a violation
+    criticalRules = ['overridden-dependency-version']
+}
