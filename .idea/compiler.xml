@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.8">
+      <module name="Meeting_Point_Back-End.main" target="12" />
+      <module name="Meeting_Point_Back-End.test" target="12" />
+      <module name="Taxi_Reservation_Back-End.main" target="12" />
+      <module name="Taxi_Reservation_Back-End.test" target="12" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xlint:unchecked" />
+  </component>
+  <component name="TypeScriptCompiler">
+    <option name="nodeInterpreterTextField" value="node" />
+    <option name="recompileOnChanges" value="true" />
+    <option name="typeScriptServiceDirectory" value="/usr/local/lib/node_modules/typescript" />
+    <option name="versionType" value="SERVICE_DIRECTORY" />
+  </component>
+</project>

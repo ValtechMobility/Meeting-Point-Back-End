@@ -2,7 +2,7 @@ style: github
 template: CHANGELOG.tpl.md
 info:
   title: CHANGELOG
-  repository_url: https://github.com/ValtechMobility/Taxi-Reservation-Back-End
+  repository_url: https://github.com/ValtechMobility/Meeting-Point-Back-End
 options:
   commits:
     # filters:
