@@ -1,54 +1,67 @@
 plugins {
+    // Apply Spring Boot Framework
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+
     // Apply the java plugin to add support for Java
     id 'java'
-
-    // Apply the application plugin to add support for building an application
-    id 'application'
 
     // Apply the war plugin to generate *.war file
     id 'war'
 
     // Apply IDE plugins to add IDE support
-    id 'eclipse'
     id 'idea'
-
-    // Apply Gradle Linter
-    id 'nebula.lint' version '9.3.2'
 
     // Apply Build Scan to improve build analysis
     id 'com.gradle.build-scan' version '2.2.1'
 }
 
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.valtech'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '12'
+
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
+    // Spring Boot (Actuator)
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    // Spring Boot (LDAP)
+    implementation 'org.springframework.boot:spring-boot-starter-data-ldap'
+    // Spring Boot (Security)
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // Spring Boot (Web)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Spring Boot (Tomcat)
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    // Spring Boot (Starter)
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // Spring Boot (Security Test)
+    testImplementation 'org.springframework.security:spring-security-test'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.6'
+    annotationProcessor 'org.projectlombok:lombok:1.18.6'
+
     // Logging
-    runtime 'org.apache.logging.log4j:log4j-api:2.11.2'
-    runtime 'org.apache.logging.log4j:log4j-core:2.11.2'
+    runtime 'org.apache.logging.log4j:log4j-api:2.11.2',
+            'org.apache.logging.log4j:log4j-core:2.11.2'
 
-    // Testing
-    gradleLint.ignore('unused-dependency') {
-        // Ignored due to bug in linter
-        // Shown as unused but used in Tests
-        testCompile "org.assertj:assertj-core:3.11.1"
-        testCompile "org.junit.jupiter:junit-jupiter-api:5.4.0"
-    }
+    // JUnit5
+    testCompile "org.junit.jupiter:junit-jupiter-api:5.4.0"
     testRuntime "org.junit.jupiter:junit-jupiter-engine:5.4.0"
-}
 
-// Define the main class for the application
-mainClassName = 'taxi-reservation.back-end.App'
+    // AssertJ
+    testCompile "org.assertj:assertj-core:3.11.1"
+}
 
 // Apply Build Scan settings
 apply from: './gradle/build-scan.gradle'
 
 // Apply Gradle Wrapper settings
 apply from: './gradle/wrapper.gradle'
-
-// Apply Gradle Linter settings
-apply from: './gradle/linter.gradle'
 
 // Apply JVM settings
 apply from: './gradle/jvm.gradle'

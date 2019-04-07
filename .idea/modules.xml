@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Taxi_Reservation_Back-End.iml" filepath="$PROJECT_DIR$/.idea/modules/Taxi_Reservation_Back-End.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Taxi_Reservation_Back-End.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Taxi_Reservation_Back-End.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Taxi_Reservation_Back-End.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Taxi_Reservation_Back-End.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/meetingpoint-backend.iml" filepath="$PROJECT_DIR$/.idea/modules/meetingpoint-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/meetingpoint-backend.main.iml" filepath="$PROJECT_DIR$/.idea/modules/meetingpoint-backend.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/meetingpoint-backend.test.iml" filepath="$PROJECT_DIR$/.idea/modules/meetingpoint-backend.test.iml" />
     </modules>
   </component>
 </project>
