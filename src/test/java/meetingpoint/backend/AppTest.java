@@ -22,7 +22,7 @@ public class AppTest {
 
     @Test
     public void helloUser() throws Exception {
-        mvc.perform(get("/user/"))
+        mvc.perform(get("/v1/user/"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Hello User!"));
     }

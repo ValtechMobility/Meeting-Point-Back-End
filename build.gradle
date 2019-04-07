@@ -41,6 +41,10 @@ dependencies {
     // Spring Boot (Security Test)
     testImplementation 'org.springframework.security:spring-security-test'
 
+    // Swagger UI
+    compile "io.springfox:springfox-swagger2:2.9.2"
+    compile "io.springfox:springfox-swagger-ui:2.9.2"
+
     // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.6'
     annotationProcessor 'org.projectlombok:lombok:1.18.6'
