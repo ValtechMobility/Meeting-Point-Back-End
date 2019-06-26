@@ -1,0 +1,12 @@
+---
+
+# Configure Spring Application
+spring:
+  data:
+    rest:
+      basePath: /api
+
+# Enable shutdown endpoint
+endpoints:
+  shutdown:
+    enabled: true

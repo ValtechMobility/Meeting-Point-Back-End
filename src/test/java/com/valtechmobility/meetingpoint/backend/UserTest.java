@@ -15,16 +15,22 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
-public class ApplicationTest {
+public class UserTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void helloUser() throws Exception {
-        mvc.perform(get("/v1/user/"))
+    public void getListOfUsers() throws Exception {
+        mvc.perform(get("/v1/user"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Hello user!"));
     }
 
+    @Test
+    public void getSpecificUser() throws Exception {
+        mvc.perform(get("/v1/user/ron.gebauer"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Hello ron.gebauer!"));
+    }
 }

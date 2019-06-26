@@ -34,7 +34,7 @@ dependencies {
     // Spring Boot (LDAP)
     implementation 'org.springframework.boot:spring-boot-starter-data-ldap'
     // Spring Boot (Security)
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+    //implementation 'org.springframework.boot:spring-boot-starter-security'
     // Spring Boot (Web)
     implementation 'org.springframework.boot:spring-boot-starter-web'
     // Spring Boot (Tomcat)
