@@ -34,7 +34,7 @@ public class SwaggerConfig {
                 "Description",
                 "v1",
                 "Terms of service",
-                new Contact("Valtech GmbH", "https://www.valtech.com", "mailto:info@valtech.com"),
+                new Contact("Valtech Mobility GmbH", "https://www.valtech-mobility.com", "mailto:info@valtech-mobility.com"),
                 "GNU GPLv3", "https://opensource.org/licenses/GPL-3.0", Collections.emptyList());
     }
 }
