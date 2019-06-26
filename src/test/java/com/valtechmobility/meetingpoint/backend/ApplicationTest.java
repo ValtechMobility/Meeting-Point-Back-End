@@ -1,4 +1,4 @@
-package meetingpoint.backend;
+package com.valtechmobility.meetingpoint.backend;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,9 +13,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = App.class)
+@SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
-public class AppTest {
+public class ApplicationTest {
 
     @Autowired
     private MockMvc mvc;
@@ -24,7 +24,7 @@ public class AppTest {
     public void helloUser() throws Exception {
         mvc.perform(get("/v1/user/"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Hello User!"));
+                .andExpect(content().string("Hello user!"));
     }
 
 }
