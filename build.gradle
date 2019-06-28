@@ -24,25 +24,32 @@ group = 'com.valtechmobility'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '12'
 
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // Spring Boot (Actuator)
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    // Spring Boot (LDAP)
-    implementation 'org.springframework.boot:spring-boot-starter-data-ldap'
-    // Spring Boot (Security)
-    //implementation 'org.springframework.boot:spring-boot-starter-security'
-    // Spring Boot (Web)
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    // Spring Boot (Tomcat)
+    // Spring Boot Starter - Runtime
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'/* Actuator */,
+                   'org.springframework.boot:spring-boot-starter-data-ldap'/* LDAP */,
+                   'org.springframework.boot:spring-boot-starter-data-mongodb'/* MongoDB */,
+                   'org.springframework.boot:spring-boot-starter-security'/* Security */,
+                   'org.springframework.boot:spring-boot-starter-web'/* Webserver */
+    // Spring Boot Starter - Embedded Server
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-    // Spring Boot (Starter)
+    // Spring Boot Starter - Testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     // Spring Boot (Security Test)
     testImplementation 'org.springframework.security:spring-security-test'
+    // Spring Boot (Development Tools in DEV Environment)
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
 
     // Swagger UI
     compile "io.springfox:springfox-swagger2:2.9.2",
@@ -62,6 +69,15 @@ dependencies {
 
     // AssertJ
     testCompile "org.assertj:assertj-core:3.12.2"
+}
+
+// Run Spring Boot Tasks
+springBoot {
+    buildInfo {
+        properties {
+            name = 'Meeting Point - Backend'
+        }
+    }
 }
 
 // Apply Build Scan settings
